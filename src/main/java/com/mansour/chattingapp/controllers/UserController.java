@@ -13,7 +13,7 @@ import java.util.UUID;
 public class UserController {
     private final UserService userService;
 
-    @PostMapping("/")
+    @PostMapping
     public void register(@RequestBody UserRequestDto userRequestDto) {
         userService.create(userRequestDto);
     }
@@ -32,4 +32,5 @@ public class UserController {
     public void update(@PathVariable UUID userId, @RequestBody UserRequestDto userRequestDto) {
         userService.update(userId, userRequestDto);
     }
+
 }
