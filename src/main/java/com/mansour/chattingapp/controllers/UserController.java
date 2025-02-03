@@ -18,16 +18,6 @@ public class UserController {
         userService.create(userRequestDto);
     }
 
-    @PostMapping("/login")
-    public void login() {
-
-    }
-
-    @PostMapping("/logout")
-    public void logout() {
-
-    }
-
     @PutMapping("/{userId}")
     public void update(@PathVariable UUID userId, @RequestBody UserRequestDto userRequestDto) {
         userService.update(userId, userRequestDto);

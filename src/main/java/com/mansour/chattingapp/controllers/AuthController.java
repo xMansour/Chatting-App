@@ -19,7 +19,7 @@ public class AuthController {
 
     private final AuthenticationManager authenticationManager;
 
-    @PostMapping("/token")
+    @PostMapping("/login")
     public String generateToken(@RequestBody AuthRequestDto authRequestDto) {
         Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authRequestDto.getEmail(), authRequestDto.getPassword()));
         if (authentication.isAuthenticated())
@@ -27,4 +27,6 @@ public class AuthController {
         else
             throw new RuntimeException("Invalid credentials"); //TODO:: add custom exception
     }
+
+
 }
